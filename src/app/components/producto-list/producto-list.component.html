@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Productos</h2>
+    <button class="create" (click)="createProducto()">Crear Nuevo Producto</button>
+    <ul>
+      <li *ngFor="let producto of productos" (click)="selectProducto(producto)">
+        {{ producto.descripcion }}
+        <div class="button-group">
+          <button class="edit" (click)="selectProducto(producto); $event.stopPropagation()">Editar</button>
+          <button class="delete" (click)="deleteProducto(producto.idProducto); $event.stopPropagation()">Eliminar</button>
+        </div>
+      </li>
+    </ul>
+  
+    <app-producto-form 
+      *ngIf="selectedProducto" 
+      [producto]="selectedProducto" 
+      (save)="loadProductos()" 
+      (cancel)="clearSelection()">
+    </app-producto-form>
+  </div>
+  

@@ -1,0 +1,10 @@
+<div class="form-container">
+    <h3>{{ model.idProducto ? 'Editar' : 'Crear' }} Producto</h3>
+    <input [(ngModel)]="model.descripcion" placeholder="Descripción">
+    <input [(ngModel)]="model.precio" placeholder="Precio">
+    <input [(ngModel)]="model.idCategoria" placeholder="ID Categoría">
+    <input [(ngModel)]="model.idProveedor" placeholder="ID Proveedor">
+    <button class="save" (click)="saveProducto()">Guardar</button>
+    <button class="cancel" (click)="cancelEdit()">Cancelar</button>
+  </div>
+  

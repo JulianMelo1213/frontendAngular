@@ -1,0 +1,9 @@
+<div class="form-container">
+    <h3>{{ model.idCliente ? 'Editar' : 'Crear' }} Cliente</h3>
+    <input [(ngModel)]="model.nombre" placeholder="Nombre">
+    <input [(ngModel)]="model.direccion" placeholder="Direccion">
+    <input [(ngModel)]="model.telefono" placeholder="Telefono">
+    <button class="save" (click)="saveCliente()">Guardar</button>
+    <button class="cancel" (click)="cancelEdit()">Cancelar</button>
+  </div>
+  

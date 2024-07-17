@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Facturas</h2>
+    <button class="create" (click)="createFactura()">Crear Nueva Factura</button>
+    <ul>
+      <li *ngFor="let factura of facturas" (click)="selectFactura(factura)">
+        {{ factura.idFactura }} - {{ factura.fecha }}
+        <div class="button-group">
+          <button class="edit" (click)="selectFactura(factura); $event.stopPropagation()">Editar</button>
+          <button class="delete" (click)="deleteFactura(factura.idFactura); $event.stopPropagation()">Eliminar</button>
+        </div>
+      </li>
+    </ul>
+  
+    <app-factura-form 
+      *ngIf="selectedFactura" 
+      [factura]="selectedFactura" 
+      (save)="loadFacturas()" 
+      (cancel)="clearSelection()">
+    </app-factura-form>
+  </div>
+  

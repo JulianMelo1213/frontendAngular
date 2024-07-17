@@ -1,0 +1,9 @@
+<div class="form-container">
+    <h3>{{ model.idVenta ? 'Editar' : 'Crear' }} Venta</h3>
+    <input [(ngModel)]="model.idFactura" placeholder="ID Factura">
+    <input [(ngModel)]="model.idProducto" placeholder="ID Producto">
+    <input [(ngModel)]="model.cantidad" placeholder="Cantidad">
+    <button class="save" (click)="saveVenta()">Guardar</button>
+    <button class="cancel" (click)="cancelEdit()">Cancelar</button>
+  </div>
+  
